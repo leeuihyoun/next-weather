@@ -181,8 +181,12 @@ const Weather: React.FC<{ region: Region }> = ({ region }) => {
 
   if (isLoading) return <div>로딩 중...</div>;
   if (error) return <div>{error}</div>;
+  const weatherIconClass = getWeatherIconClass(
+    weatherData?.sky ?? 'defaultSky', 
+    weatherData?.precipitation ?? 'defaultPrecipitation'
+  );
 
-  const weatherIconClass = getWeatherIconClass(weatherData?.sky, weatherData?.precipitation);
+  
 
   return (
     <div className={styles.weather}>
