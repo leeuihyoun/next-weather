@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 
-const API_KEY = "P71Hw2wR%2F6MChtUK4aHJCUmtP043K7BnXAi%2Bk5oqRlaWeRF0HUmjIUg9cINiNDrGZ%2FBNov3FqppiIFI%2F7u%2FnLA%3D%3D";
+const API_KEY = process.env.WEATHER_API_KEY;
 
 async function fetchWeatherData(url: string, params: any, retries: number = 3) {
   while (retries > 0) {
